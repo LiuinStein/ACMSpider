@@ -202,6 +202,14 @@ void CACMSpiderDlg::OnBnClickedBtnFindit()
 
 BOOL CACMSpiderDlg::PreTranslateMessage(MSG* pMsg)
 {
+	if (pMsg->message == WM_LBUTTONUP && m_editURL.m_hWnd == pMsg->hwnd)
+	{
+		m_editURL.SetSel(0, -1);
+	}
+	if (pMsg->message == WM_LBUTTONUP && m_editRetcode.m_hWnd == pMsg->hwnd)
+	{
+		m_editRetcode.SetSel(0, -1);
+	}
 	if (pMsg->message == WM_KEYDOWN && (pMsg->wParam == VK_RETURN || pMsg->wParam == VK_ESCAPE))
 		return TRUE;
 	if(pMsg->message == WM_KEYDOWN)
