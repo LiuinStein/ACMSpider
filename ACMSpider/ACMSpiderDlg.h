@@ -3,6 +3,8 @@
 //
 
 #pragma once
+#include "afxwin.h"
+#include <string>
 
 
 // CACMSpiderDlg dialog
@@ -30,4 +32,24 @@ protected:
 	afx_msg void OnPaint();
 	afx_msg HCURSOR OnQueryDragIcon();
 	DECLARE_MESSAGE_MAP()
+public:
+	CEdit m_editUsername;
+	CEdit m_editPassword;
+	CEdit m_editURL;
+	CEdit m_editRetcode;
+	std::string m_strLang;
+	std::string m_strInput;
+	std::string m_strEasterEgg;
+
+	bool GetStrFromEdit(CEdit& __edit, std::string & __str);
+	CString RandomLRC();
+
+	afx_msg void OnBnClickedRadio1();
+	afx_msg void OnBnClickedRadio2();
+	afx_msg void OnBnClickedRadio3();
+	afx_msg void OnBnClickedRadio4();
+	afx_msg void OnBnClickedRadio5();
+	afx_msg void OnBnClickedBtnFindit();
+	virtual BOOL PreTranslateMessage(MSG* pMsg);
+	afx_msg void OnBnClickedBtnCopyit();
 };

@@ -95,7 +95,7 @@ BOOL CACMSpiderApp::InitInstance()
 		delete pShellManager;
 	}
 
-#if !defined(_AFXDLL) && !defined(_AFX_NO_MFC_CONTROLS_IN_DIALOGS)
+#ifndef _AFXDLL
 	ControlBarCleanUp();
 #endif
 
