@@ -210,7 +210,7 @@ BOOL CACMSpiderDlg::PreTranslateMessage(MSG* pMsg)
 	{
 		m_editRetcode.SetSel(0, -1);
 	}
-	if (pMsg->message == WM_KEYDOWN && (pMsg->wParam == VK_RETURN || pMsg->wParam == VK_ESCAPE))
+	if (pMsg->message == WM_KEYDOWN && (/*pMsg->wParam == VK_RETURN ||*/ pMsg->wParam == VK_ESCAPE))
 		return TRUE;
 	if(pMsg->message == WM_KEYDOWN)
 	{
